@@ -15,11 +15,15 @@ else:
             print(int(a[0] * a[1]))
         else:
             max_a = a[0]
+            max_a_id = -1
             max_b = a[0]
-            for i in a:
-                if max_a < i:
-                    max_a = i
-            for i in a:
-                if max_b < i < max_a:
-                    max_b = i
+            for i in range(len_a):
+                if max_a < a[i]:
+                    max_a = a[i]
+                    max_a_id = i
+            max_b_id = -1
+            for i in range(len(a)):
+                if max_b <= a[i] <= max_a and max_a_id != i:
+                    max_b = a[i]
+                    max_b_id = i
             print(int(max_a * max_b))
